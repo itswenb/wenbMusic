@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upB-gB-iAe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iSq-R6-ccC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QOC-w4-LiI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AC4-ko-9Wi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iSq-R6-ccC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5KM-SS-sIn"/>
+                            <constraint firstAttribute="trailing" secondItem="iSq-R6-ccC" secondAttribute="trailing" id="Ogg-GW-ys0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iSq-R6-ccC" secondAttribute="bottom" id="R15-vt-LMm"/>
+                            <constraint firstItem="iSq-R6-ccC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uB1-f1-fAB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="musicsTableView" destination="iSq-R6-ccC" id="Pdm-b0-uaz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106" y="652"/>
+        </scene>
+        <!--搜索-->
+        <scene sceneID="uyb-Lc-J3c">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfr-gO-tSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="GmS-Oj-36M" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w3Y-WP-e0z"/>
+                        <viewControllerLayoutGuide type="bottom" id="bLM-V2-VZK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BGe-fm-loR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="输入你要搜索的歌曲名" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-fA-mtB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GmS-Oj-36M" id="udK-bS-9xq"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="搜索" id="3cB-PS-28f"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="B3g-zN-BND" id="Kng-Ph-REU"/>
+                    </connections>
+                </viewController>
+                <searchDisplayController id="B3g-zN-BND">
+                    <connections>
+                        <outlet property="delegate" destination="GmS-Oj-36M" id="L05-VJ-O3A"/>
+                        <outlet property="searchBar" destination="QyF-fA-mtB" id="kcq-dt-HKk"/>
+                        <outlet property="searchContentsController" destination="GmS-Oj-36M" id="7hT-Ga-80L"/>
+                        <outlet property="searchResultsDataSource" destination="GmS-Oj-36M" id="po3-gw-4s3"/>
+                        <outlet property="searchResultsDelegate" destination="GmS-Oj-36M" id="tBO-TW-Y0e"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="876" y="310"/>
+        </scene>
+        <!--音乐-->
+        <scene sceneID="JzT-Uk-eIS">
+            <objects>
+                <viewController id="htd-MV-qav" customClass="WenbMusicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvi-0f-MsC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vpu-TT-3aq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qg2-YN-B4t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bJn-Ja-p1v">
+                                <rect key="frame" x="0.0" y="50" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cCh-Dp-nCf">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footer" id="2Jb-eF-msR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="htd-MV-qav" id="BWp-40-5SE"/>
+                                    <outlet property="delegate" destination="htd-MV-qav" id="699-9W-Pp5"/>
+                                </connections>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-kw-goV">
+                                <rect key="frame" x="16" y="20" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ahp-5N-Dvm"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="网易云"/>
+                                    <segment title="虾米"/>
+                                    <segment title="QQ音乐"/>
+                                </segments>
+                                <connections>
+                                    <action selector="musicDidChangeSource:" destination="htd-MV-qav" eventType="valueChanged" id="v0g-8V-hzW"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QC-LC-bPe">
+                                <rect key="frame" x="0.0" y="548" width="375" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="laO-Ye-Sd1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wZ6-kw-goV" secondAttribute="trailing" id="2xk-DS-YO5"/>
+                            <constraint firstItem="bJn-Ja-p1v" firstAttribute="top" secondItem="wZ6-kw-goV" secondAttribute="bottom" id="7HR-oe-FEp"/>
+                            <constraint firstAttribute="trailing" secondItem="bJn-Ja-p1v" secondAttribute="trailing" id="E5d-nI-3Wp"/>
+                            <constraint firstItem="wZ6-kw-goV" firstAttribute="top" secondItem="bvi-0f-MsC" secondAttribute="bottom" id="HoW-e6-KEM"/>
+                            <constraint firstItem="bJn-Ja-p1v" firstAttribute="leading" secondItem="Qg2-YN-B4t" secondAttribute="leading" id="Jlm-Ce-QWu"/>
+                            <constraint firstItem="wZ6-kw-goV" firstAttribute="leading" secondItem="Qg2-YN-B4t" secondAttribute="leadingMargin" id="Yyu-0y-rsi"/>
+                            <constraint firstItem="bJn-Ja-p1v" firstAttribute="leading" secondItem="Qg2-YN-B4t" secondAttribute="leading" id="c5h-Eq-gxx"/>
+                            <constraint firstItem="5QC-LC-bPe" firstAttribute="leading" secondItem="Qg2-YN-B4t" secondAttribute="leading" id="gCW-bZ-vD7"/>
+                            <constraint firstItem="5QC-LC-bPe" firstAttribute="top" secondItem="bJn-Ja-p1v" secondAttribute="bottom" id="q4R-D4-Eau"/>
+                            <constraint firstAttribute="trailing" secondItem="5QC-LC-bPe" secondAttribute="trailing" id="rCN-5y-fWV"/>
+                            <constraint firstItem="bJn-Ja-p1v" firstAttribute="top" secondItem="wZ6-kw-goV" secondAttribute="bottom" id="tiC-of-Q01"/>
+                            <constraint firstAttribute="trailing" secondItem="bJn-Ja-p1v" secondAttribute="trailing" id="v64-Fq-b3Y"/>
+                            <constraint firstItem="Vpu-TT-3aq" firstAttribute="top" secondItem="5QC-LC-bPe" secondAttribute="bottom" id="xlL-CS-Yyv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="音乐" id="4m0-Um-C8Q"/>
+                    <connections>
+                        <outlet property="music" destination="wZ6-kw-goV" id="sS1-Ud-uqq"/>
+                        <outlet property="musicList" destination="bJn-Ja-p1v" id="KUT-OP-vyH"/>
+                        <outlet property="playerView" destination="5QC-LC-bPe" id="kR7-fQ-Rnw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWj-77-Z5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="-345.87706146926541"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="JKT-Be-y3S">
+            <objects>
+                <tabBarController id="upB-gB-iAe" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rXw-eG-ds5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="htd-MV-qav" kind="relationship" relationship="viewControllers" id="WrT-b1-bnp"/>
+                        <segue destination="GmS-Oj-36M" kind="relationship" relationship="viewControllers" id="vmG-tt-SLb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBg-OW-dhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75" y="-18"/>
+        </scene>
+    </scenes>
+</document>
